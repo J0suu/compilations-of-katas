@@ -19,10 +19,11 @@ export function getAttackDamage(
 
 	const efectivity = getEffectivity(attackerType, defenderType);
 
-	let damage = 50 * (attack / defense) * efectivity;
+	const damage = 50 * (attack / defense) * efectivity;
 	return parseFloat(damage.toFixed(2));
 }
-function getEffectivity(attackerType: string, defenderType: string) {
+
+function getEffectivity(attackerType: string, defenderType: string): number {
 	const isVeryEffective =
 		(attackerType == 'water' && defenderType == 'fire') ||
 		(attackerType == 'fire' && defenderType == 'grass') ||
